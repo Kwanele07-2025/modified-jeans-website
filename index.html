@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Modified Jeans</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: #111;
+    color: #fff;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* HERO */
+header {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+.btn {
+    background: #c59d5f;
+    padding: 10px 20px;
+    color: #000;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+/*SECTIONS */
+section {
+    padding: 60px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+
+/* GALLERY*/
+.gallery {
+    display: flex;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.gallery img {
+    width: 100%;
+    max-width: 450px;
+    object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+}
+.gallery img {
+    transition: 0.6s ease;
+    cursor: pointer;
+}
+.gallery img:hover {
+    opacity: 0.85s;
+    transform: scale(1.02);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-image: url("hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p{
+    font-size: 1rem;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+form button {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* SERVICES */
+
+.services-section {
+
+    padding: 100px 10%;
+
+    text-align: center;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #111,
+        #1a1a1a
+    );
+}
+
+.services-title {
+
+    font-size: 3rem;
+
+    margin-bottom: 55px;
+
+    letter-spacing: 2px;
+}
+
+.services-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.service-box {
+
+    position: relative;
+
+    background:
+    linear-gradient(
+        145deg,
+        #1b1b1b,
+        #242424
+    );
+
+    padding: 40px 30px;
+
+    width: 300px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.35);
+
+    transition: 0.4s ease;
+}
+
+/* GOLD TOP LINE */
+
+.service-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+    linear-gradient(
+        to right,
+        #c59d5f,
+        transparent
+    );
+}
+
+.service-box:hover {
+
+    transform: translateY(-12px);
+
+    border-color: rgba(197,157,95,0.3);
+
+    box-shadow:
+    0 15px 35px rgba(197,157,95,0.15);
+}
+
+.service-icon {
+
+    font-size: 2.8rem;
+
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+
+    margin-bottom: 15px;
+
+    font-size: 1.3rem;
+
+    color: white;
+}
+
+.service-box p {
+
+    color: #bcbcbc;
+
+    line-height: 1.8;
+
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: 70vh;
+        padding: 15px;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 90%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.design-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.9)
+    );
+
+    color: white;
+
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+.design-name {
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.gallery-item:hover .design-name {
+    opacity: 1;
+}
+.design-name {
+    text-transform: uppercase;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: black;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: black;
+}
+
+body {
+    cursor: default;
+}
+button,
+a {
+    cursor: pointer;
+}
+
+.gallery-section {
+    padding: 80px 10%;
+    
+}
+
+.gallery-title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #c59d5f;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.brand-story {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.brand-story p {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #bbb;
+}
+
+.gallery-item {
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+p {
+    color: #ccc;
+}
+
+section:nth-child(even) {
+    background: #181818;
+}
+    </style>
+    </head>
+
+    <body>
+
+        <nav>
+            <h2>Modified Jeans</h2>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-content">
+            <h1>Custom Denim. Redefined.</h1>
+            <p>We transform jeans into unique fashion pieces.</p>
+            <a href="#order-section" class="btn">Order now</a>
+            </div>
+        </header>
+
+        <section class="brand-story">
+            <h2>Crafted With Identity</h2>
+            <p>
+                At Modified Jeans, we tranform ordinary denim into wearable art. 
+                Every piece is handcrafted to match your personal style,
+                giving you jeans that stand out with originality and confidence.
+            </p>
+        </section>
+
+        <section id="about" class="services-section">
+
+    <h2 class="services-title">Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-box">
+
+            <div class="service-icon">✂</div>
+
+            <h3>Custom Jeans Design</h3>
+
+            <p>
+                Unique handcrafted denim tailored to your personal style.
+            </p>
+
+        </div>
+
+        <div class="service-box">
+
+            <div class="service-icon">🧵</div>
+
+            <h3>Repairs & Alterations</h3>
+
+            <p>
+                Premium denim repairs, resizing and creative restorations.
+            </p>
+
+        </div>
+
+        <div class="service-box">
+
+            <div class="service-icon">🔥</div>
+
+            <h3>Creative Denim Styling</h3>
+
+            <p>
+                Modern fashion modifications inspired by luxury streetwear.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section id="projects">
+            <h2>Our Work</h2>
+            <div class="gallery">
+                <img src="our-work.png" alt="Custom Jeans Design">
+                <img src="jeans.png" alt="Custom Jeans Design">
+                </div>
+        </section>
+
+       <section class="gallery-section">
+
+    <h2 class="gallery-title">Recent Designs</h2>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="distressed-jean.jpeg" alt="Design 1">
+
+            <div class="design-name">
+                Midnight Distress
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="painted-denim.jpeg" alt="Design 2">
+
+            <div class="design-name">
+                Painted Denim
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="patched-jean.jpeg" alt="Design 3">
+
+            <div class="design-name">
+                Shadow Wash
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="stacked-jeans.jpeg" alt="Design 4">
+
+            <div class="design-name">
+                Stacked Jeans
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+        <section id="contacts">
+            <h2>Contact Us</h2>
+            <a href="https://wa.me/27684331502" class="btn">WhatsApp Us</a>
+            <a href="mailto:kwanelebukwanakb@gmail.com" class="btn">Email Us</a>
+        </section>
+
+        <section id="order-section">
+    <h2 class="order">Place Your Order</h2>
+
+    <form onsubmit="sendToWhatsApp(); return false;">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="design" placeholder="Design (e.g ripped, patchwork)" required>
+        <input type="text" id="size" placeholder="Size" required>
+        <input type="text" id="color" placeholder="Color" required>
+        <textarea id="details" placeholder="Extra details"></textarea>
+
+        <button type="submit" class="btn">Send Order</button>
+    </form>
+</section>
+
+<section class="socials">
+    <h2>Follow Us</h2>
+
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">Facebook</a>
+</section>
+        <footer>
+            <p>
+                &copy; 2026 Modified Jeans
+            </p>
+            <p>
+                Johannesburg, South Africa
+            </p>
+        </footer>
+
+        <script>
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let design = document.getElementById("design").value;
+    let size = document.getElementById("size").value;
+    let color = document.getElementById("color").value;
+    let details = document.getElementById("details").value;
+
+    let message = "Hello, I want to order custom jeans:%0A%0A"
+        + "Name: " + name + "%0A"
+        + "Design: " + design + "%0A"
+        + "Size: " + size + "%0A"
+        + "Color: " + color + "%0A"
+        + "Details: " + details;
+
+    let url = "https://wa.me/27684331502?text=" + message;
+
+    window.open(url, "_blank");
+}
+</script>
+    </body>
+    </html>
